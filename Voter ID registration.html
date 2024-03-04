@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="voterRegistrationApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter ID Registration</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body ng-controller="registrationController">
+
+    <form name="voterRegistrationForm" ng-submit="submitForm()"ng-hide="showConfirmation">
+        <!-- Personal Information -->
+        <h2>Personal Information</h2>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" ng-model="user.firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" ng-model="user.lastName" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" ng-model="user.dob" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" ng-model="user.gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <!-- Address Information -->
+        <h2>Address Information</h2>
+        <label for="address">Address:</label>
+        <textarea id="address" ng-model="user.address" required></textarea>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" ng-model="user.city" required>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" ng-model="user.state" required>
+
+        <label for="zip">ZIP Code:</label>
+        <input type="text" id="zip" ng-model="user.zip" required>
+
+        <!-- Contact Information -->
+        <h2>Contact Information</h2>
+        <label for="email">Email:</label>
+        <input type="email" id="email" ng-model="user.email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" ng-model="user.phone" required>
+
+        <!-- Additional Information -->
+        <h2>Additional Information</h2>
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" ng-model="user.occupation">
+
+        <label for="education">Education:</label>
+        <input type="text" id="education" ng-model="user.education">
+
+        <!-- Voting History -->
+        <h2>Voting History</h2>
+        <label for="lastElection">Last Election Voted:</label>
+        <input type="text" id="lastElection" ng-model="user.lastElection">
+
+        <label for="reasonNotVoting">Reason for Not Voting (if applicable):</label>
+        <textarea id="reasonNotVoting" ng-model="user.reasonNotVoting"></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form> <div ng-show="showConfirmation" class="confirmation">
+        <h3>Registration Successful</h3>
+        <p>Thank you for registering for a Voter ID. Your information has been submitted successfully.</p>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app2.js"></script>
+</body>
+
+</html>
